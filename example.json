@@ -1,0 +1,311 @@
+{
+    "halls": {
+        "0": {
+            "id": 0,
+            "size": 73
+        },
+        "1": {
+            "id": 1,
+            "size": 191
+        },
+        "2": {
+            "id": 2,
+            "size": 331
+        },
+        "3": {
+            "id": 3,
+            "size": 312
+        },
+        "4": {
+            "id": 4,
+            "size": 224
+        }
+    },
+    "movies": {
+        "0": {
+            "id": 0,
+            "title": "liability ethernet purchasing",
+            "length": 195,
+            "description": "execute dude look entrepreneur fluid cordless vienna cos pit cest carter gloves chronic carb progressive psi interventions medicine least elevation",
+            "premiere_date": "\"1991-02-15T00:00:00Z\""
+        },
+        "1": {
+            "id": 1,
+            "title": "occurrence ec mutual",
+            "length": 174,
+            "description": "factory unfortunately om nominations examining label punch eur general peterson church views gear kim sluts sheet works bo donors predicted",
+            "premiere_date": "\"1930-01-03T00:00:00Z\""
+        },
+        "3": {
+            "id": 3,
+            "title": "assessments planned mood",
+            "length": 88,
+            "description": "mild version comfort legislature warning posts transcript india netherlands has rpg hiking ethiopia dying queries ft cadillac lasting twist dining",
+            "premiere_date": "\"1979-09-17T00:00:00Z\""
+        },
+        "4": {
+            "id": 4,
+            "title": "devoted workout started",
+            "length": 234,
+            "description": "adelaide communication appraisal pharmaceuticals anywhere dreams rated pathology expensive conclude hawk promising len swing issue hair threesome space flu currently",
+            "premiere_date": "\"1988-05-27T00:00:00Z\""
+        }
+    },
+    "screenings": {
+        "0": {
+            "id": 0,
+            "hall_id": 1,
+            "movie_id": 1,
+            "movie_title": "occurrence ec mutual",
+            "date": "2023-02-14T16:38:04Z",
+            "available_seats": 191,
+            "viewers": []
+        },
+        "1": {
+            "id": 1,
+            "hall_id": 0,
+            "movie_id": 0,
+            "movie_title": "liability ethernet purchasing",
+            "date": "2023-01-11T16:38:04Z",
+            "available_seats": 73,
+            "viewers": [
+                "hl",
+                "drives",
+                "doe",
+                "yarn",
+                "greece",
+                "explosion",
+                "andy",
+                "consultants",
+                "symbol",
+                "officially",
+                "closes",
+                "pastor",
+                "intl"
+            ]
+        },
+        "2": {
+            "id": 2,
+            "hall_id": 1,
+            "movie_id": 4,
+            "movie_title": "devoted workout started",
+            "date": "2023-01-31T16:38:04Z",
+            "available_seats": 191,
+            "viewers": [
+                "pens",
+                "illinois",
+                "sector",
+                "afraid"
+            ]
+        },
+        "3": {
+            "id": 3,
+            "hall_id": 1,
+            "movie_id": 1,
+            "movie_title": "occurrence ec mutual",
+            "date": "2022-12-21T16:38:04Z",
+            "available_seats": 191,
+            "viewers": [
+                "lexus",
+                "ict",
+                "role"
+            ]
+        },
+        "4": {
+            "id": 4,
+            "hall_id": 4,
+            "movie_id": 4,
+            "movie_title": "devoted workout started",
+            "date": "2023-03-04T16:38:04Z",
+            "available_seats": 224,
+            "viewers": []
+        },
+        "5": {
+            "id": 5,
+            "hall_id": 3,
+            "movie_id": 1,
+            "movie_title": "occurrence ec mutual",
+            "date": "2023-03-17T16:38:04Z",
+            "available_seats": 312,
+            "viewers": []
+        },
+        "6": {
+            "id": 6,
+            "hall_id": 0,
+            "movie_id": 1,
+            "movie_title": "occurrence ec mutual",
+            "date": "2022-12-23T16:38:04Z",
+            "available_seats": 73,
+            "viewers": [
+                "searchcom",
+                "sons",
+                "enjoying",
+                "lotus",
+                "species",
+                "reports",
+                "dried",
+                "insurance",
+                "cleaner"
+            ]
+        },
+        "7": {
+            "id": 7,
+            "hall_id": 0,
+            "movie_id": 0,
+            "movie_title": "liability ethernet purchasing",
+            "date": "2023-01-24T16:38:04Z",
+            "available_seats": 73,
+            "viewers": [
+                "flag",
+                "scan",
+                "mitsubishi",
+                "linux",
+                "univ",
+                "utilities",
+                "affected",
+                "vermont",
+                "freeware"
+            ]
+        },
+        "8": {
+            "id": 8,
+            "hall_id": 3,
+            "movie_id": 4,
+            "movie_title": "devoted workout started",
+            "date": "2023-03-02T16:38:04Z",
+            "available_seats": 312,
+            "viewers": [
+                "errors",
+                "golden",
+                "qld"
+            ]
+        },
+        "10": {
+            "id": 10,
+            "hall_id": 3,
+            "movie_id": 1,
+            "movie_title": "occurrence ec mutual",
+            "date": "2023-02-24T16:38:04Z",
+            "available_seats": 312,
+            "viewers": [
+                "requirements",
+                "ellen"
+            ]
+        },
+        "11": {
+            "id": 11,
+            "hall_id": 1,
+            "movie_id": 4,
+            "movie_title": "devoted workout started",
+            "date": "2023-01-15T16:38:04Z",
+            "available_seats": 191,
+            "viewers": [
+                "yen",
+                "worst",
+                "victoria",
+                "divorce",
+                "nice",
+                "south",
+                "voting"
+            ]
+        },
+        "12": {
+            "id": 12,
+            "hall_id": 3,
+            "movie_id": 4,
+            "movie_title": "devoted workout started",
+            "date": "2023-03-14T16:38:04Z",
+            "available_seats": 312,
+            "viewers": [
+                "cash",
+                "publishers",
+                "aspects",
+                "enterprise",
+                "raise",
+                "texas",
+                "hairy",
+                "led",
+                "nd",
+                "ld",
+                "level"
+            ]
+        },
+        "14": {
+            "id": 14,
+            "hall_id": 4,
+            "movie_id": 3,
+            "movie_title": "assessments planned mood",
+            "date": "2023-02-14T16:38:04Z",
+            "available_seats": 224,
+            "viewers": [
+                "mcdonald",
+                "updates",
+                "scenic",
+                "raid",
+                "assists",
+                "tower"
+            ]
+        },
+        "15": {
+            "id": 15,
+            "hall_id": 3,
+            "movie_id": 4,
+            "movie_title": "devoted workout started",
+            "date": "2023-01-07T16:38:04Z",
+            "available_seats": 312,
+            "viewers": [
+                "suggestions",
+                "vitamin",
+                "mug",
+                "widespread",
+                "rapids",
+                "rubber",
+                "hospital",
+                "shipments",
+                "wc",
+                "synthesis",
+                "councils"
+            ]
+        },
+        "18": {
+            "id": 18,
+            "hall_id": 2,
+            "movie_id": 4,
+            "movie_title": "devoted workout started",
+            "date": "2023-02-15T16:38:04Z",
+            "available_seats": 331,
+            "viewers": [
+                "auction",
+                "incidence",
+                "meanwhile",
+                "statutes",
+                "wars",
+                "pg",
+                "occurred"
+            ]
+        },
+        "19": {
+            "id": 19,
+            "hall_id": 2,
+            "movie_id": 0,
+            "movie_title": "liability ethernet purchasing",
+            "date": "2022-12-14T16:38:04Z",
+            "available_seats": "0",
+            "viewers": [
+                "velvet",
+                "before",
+                "stations",
+                "oxide",
+                "dishes",
+                "closest",
+                "composition",
+                "wed",
+                "pants",
+                "asia",
+                "fail",
+                "sleeve",
+                "colombia"
+            ]
+        }
+    }
+}
