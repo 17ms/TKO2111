@@ -47,7 +47,7 @@ def print_list(dataset: list) -> None:
 
     headers = dataset[0].keys()
     rows = [x.values() for x in dataset]
-    print(tabulate(rows, headers, tablefmt="heavy_grid"))
+    print(tabulate(rows, headers, tablefmt="psql"))
 
 
 def add_item(data: dict, section: str) -> None:
@@ -63,7 +63,9 @@ def add_item(data: dict, section: str) -> None:
     item = dict()
     id_key = int([*data[section].keys()][-1]) + 1
 
-    _ = [get_input(data, attr, id_key, item) for attr in attributes]
+    for attr in attributes:
+        get_input(data, attr, id_key, item)
+
     datasection[str(id_key)] = item
 
 
@@ -111,9 +113,8 @@ def delete_item(data: dict, section: str, item_id: str) -> None:
     print(f"[ Item '{item_id}' successfully deleted from '{section}' ]")
 
     if section in ("movies", "halls"):
-        print(
-            f"[ {delete_relations(data['screenings'], section, item_id)} relations from 'screenings' deleted ]"
-        )
+        amount = delete_relations(data["screenings"], section, item_id)
+        print(f"[ {amount} relations from 'screenings' deleted ]")
 
 
 def delete_relations(screenings: dict, section: str, item_id: str) -> int:
