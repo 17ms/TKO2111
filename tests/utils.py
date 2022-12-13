@@ -8,8 +8,11 @@ from datetime import datetime, timedelta
 from manager import models, constants
 
 
+WORDLIST_URL = "https://www.mit.edu/~ecprice/wordlist.10000"
+
+
 def request_wordlist() -> [str]:
-    res = request.urlopen(constants.WORDLIST_URL)
+    res = request.urlopen(WORDLIST_URL)
     content = res.read().decode("utf-8")
 
     return content.splitlines()
