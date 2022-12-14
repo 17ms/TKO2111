@@ -13,7 +13,7 @@ def read_json(filename: str) -> dict:
         with open(filename, "r", encoding="utf-8") as handle:
             # could check for expired screenings at this point
             return json.load(handle)
-    except FileNotFoundError:
+    except (FileNotFoundError, json.JSONDecodeError):
         data = {}
         data["halls"] = {}
         data["movies"] = {}
