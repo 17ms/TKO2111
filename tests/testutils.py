@@ -2,10 +2,9 @@
 
 
 import random
-import json
 from urllib import request
 from datetime import datetime, timedelta
-from manager import models, constants
+from manager import constants
 
 
 WORDLIST_URL = "https://www.mit.edu/~ecprice/wordlist.10000"
@@ -39,15 +38,14 @@ def generate_testdata() -> dict:
             constants.ISO_8601_DATE_FORMAT,
         )
 
-        data["halls"][str(i)] = models.Hall(random.randint(50, 350), i).to_dict()
-        data["movies"][str(i)] = models.Movie(
-            i,
-            title,
-            random.randint(60, 240),
-            description,
-            json.dumps(premiere_date, default=lambda o: o.isoformat()),
-        ).to_dict()
-
+        data["halls"][str(i)] = {"id": i, "size": random.randint(50, 350)}
+        data["movies"][str(i)] = {
+            "id": i,
+            "title": title,
+            "length": random.randint(60, 240),
+            "description": description,
+            "premiere_date": premiere_date,
+        }
     for i in range(20):
         hall = data["halls"][str(random.randint(0, len(data["halls"]) - 1))]
         movie = data["movies"][str(random.randint(0, len(data["movies"]) - 1))]
@@ -55,9 +53,15 @@ def generate_testdata() -> dict:
             now + timedelta(days=random.randint(1, 100)), constants.ISO_8601_DATE_FORMAT
         )
 
-        screening = models.Screening(
-            i, hall["id"], movie["id"], movie["title"], date, hall["size"]
-        ).to_dict()
+        screening = {
+            "id": i,
+            "hall_id": hall["id"],
+            "movie_id": movie["id"],
+            "movie_title": movie["title"],
+            "date": date,
+            "available_seats": hall["size"],
+            "viewers": [],
+        }
 
         for _ in range(random.randint(0, 15)):
             screening["viewers"].append(words[random.randint(0, len(words) - 1)])

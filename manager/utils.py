@@ -4,7 +4,7 @@
 import json
 from datetime import datetime
 from tabulate import tabulate
-from manager import models
+from manager import constants
 from manager.constants import ISO_8601_DATE_FORMAT, SectionType
 
 
@@ -14,10 +14,10 @@ def read_json(filename: str) -> dict:
             # could check for expired screenings at this point
             return json.load(handle)
     except FileNotFoundError:
-        data = dict()
-        data["halls"] = dict()
-        data["movies"] = dict()
-        data["screenings"] = dict()
+        data = {}
+        data["halls"] = {}
+        data["movies"] = {}
+        data["screenings"] = {}
 
         return data
 
@@ -54,13 +54,13 @@ def add_item(data: dict, section: str) -> None:
     datasection = data[section]
 
     if section == "halls":
-        attributes = models.Hall.attributes()
+        attributes = constants.HALL_ATTRIB
     elif section == "movies":
-        attributes = models.Movie.attributes()
+        attributes = constants.MOVIE_ATTRIB
     elif section == "screenings":
-        attributes = models.Screening.attributes()
+        attributes = constants.SCREENING_ATTRIB
 
-    item = dict()
+    item = {}
     id_key = int([*data[section].keys()][-1]) + 1
 
     for attr in attributes:
@@ -69,7 +69,7 @@ def add_item(data: dict, section: str) -> None:
     datasection[str(id_key)] = item
 
 
-def get_input(data: dict, attr: list, id_key: int, item: dict) -> None:
+def get_input(data: dict, attr: tuple, id_key: int, item: dict) -> None:
     # try until input is valid
     while True:
         try:
@@ -82,15 +82,17 @@ def get_input(data: dict, attr: list, id_key: int, item: dict) -> None:
                     input(f"{attr[0]} ({attr[1].name}: {ISO_8601_DATE_FORMAT}) > "),
                     ISO_8601_DATE_FORMAT,
                 )
-                item[attr[0]] = json.dumps(date, default=lambda o: o.isoformat())
+                item[attr[0]] = datetime.strftime(date, ISO_8601_DATE_FORMAT)
             elif attr[1] == SectionType.MOVIE_ID:
-                movie_id = input(f"{attr[0]} {attr[1].name} > ")
-                item[attr[0]] = int(movie_id)
-                item["movie_title"] = data["movies"][movie_id]["title"]
+                item[attr[0]] = int(input(f"{attr[0]} {attr[1].name} > "))
             elif attr[1] == SectionType.HALL_ID:
-                hall_id = input(f"{attr[0]} {attr[1].name} > ")
-                item[attr[0]] = int(hall_id)
-                item["movie_title"] = data["halls"][hall_id]["size"]
+                item[attr[0]] = int(input(f"{attr[0]} {attr[1].name} > "))
+            elif attr[1] == SectionType.HALL_SIZE:
+                item["available_seats"] = data["halls"][str(item["hall_id"])]["size"]
+            elif attr[1] == SectionType.MOVIE_TITLE:
+                item["movie_title"] = data["movies"][str(item["movie_id"])]["title"]
+            elif attr[1] == SectionType.EMPTY_LIST:
+                item[attr[0]] = []
             else:
                 item[attr[0]] = input(f"{attr[0]} ({attr[1].name}) > ")
             break

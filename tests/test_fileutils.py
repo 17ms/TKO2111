@@ -5,12 +5,12 @@ import random
 import unittest
 import string
 import os
-from tests import utils as testutils
+from tests import testutils
 from manager import utils
 
 
-class TestDataModels(unittest.TestCase):
-    def test_json_serialization(self):
+class TestFileUtils(unittest.TestCase):
+    def test_json_conversion(self):
         self.maxDiff = None
         generated_data = testutils.generate_testdata()
         filepath = (
@@ -23,4 +23,5 @@ class TestDataModels(unittest.TestCase):
         read_data = utils.read_json(filepath)
 
         self.assertEqual(generated_data, read_data)
+
         os.remove(filepath)
