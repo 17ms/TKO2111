@@ -39,7 +39,7 @@ def print_list(dataset: list) -> None:
             item["viewers"] = (
                 ", ".join(item["viewers"][:3])
                 + " and "
-                + str(len(item["viewers"]) - 1)
+                + str(len(item["viewers"]) - 3)
                 + " others"
             )
         elif "viewers" in item:
