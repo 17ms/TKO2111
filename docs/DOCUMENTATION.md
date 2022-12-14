@@ -12,6 +12,36 @@ Kuten illustraatiosta nähdään, käynnistyessään ohjelmisto valitsee käytt�
 
 Molemmat moduulit (`admin` & `client`) jäsentelevät käyttäjän antamia komentoja toisensa perään, kunnes käyttäjä syöttää `quit`-komennon, jolloin ohjelma sulkeutuu. Mikäli käyttäjän syöttämät komennot vastaavat jotain ohjelmaan kovakoodattua komentoa, ohjelma kutsuu komentoa vastaavaa funktiota `utils`-moduulista (esim. komento `list movies` vastaa funktion `utils.print_list` kutsumista, yhtenä funktion parametrina olisi tässä tapauksessa sanakirjan elokuvia koskeva osa-alue `data["movies"]`). Ohjelma kirjoittaa/päivittää tiedot JSON-tiedostoon jokaisen tietoja jollain tavalla muokkaavan funktiokutsun jälkeen kutsumalla `write_json`-funktiota `utils`-moduulista.
 
+### Sisäiset komennot
+
+Käyttäjä:
+
+```
+usage: [list | ticket | help | quit] <ARGUMENTS>
+
+commands:
+  list      SECTION*     list all data entries of a section
+  ticket    ID VIEWER    book a ticket into a screening
+  help                   show this help message
+  quit                   exit the app
+```
+
+Ylläpitäjä:
+
+```
+usage: [list | add | edit | delete | help | quit] <ARGUMENTS>
+
+commands:
+  list      SECTION*             list all data entries of a section
+  add       SECTION*             add a new entry into a section
+  edit      SECTION* ID FIELD    edit a field of a section entry
+  delete    SECTION* ID          delete an entry from a section
+  help                           show this help message
+  quit                           exit the app
+```
+
+\* `SECTION`-muuttujaa vastaavia arvoja ovat `movies`, `halls` & `screenings`
+
 ### Ulkoiset kirjastot
 
 Ohjelmassa käytetään ulkoista [tabulate-kirjastoa](https://pypi.org/project/tabulate/). Kirjastoa käytetään tietojen taulukkomaiseen tulostamiseen alla olevan esimerkin mukaisesti.
